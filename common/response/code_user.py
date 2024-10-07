@@ -1,7 +1,5 @@
 from enum import Enum
 
-from common.exception.handler import create_custom_exception
-
 
 class UserStatus(Enum):
     ACCOUNT_FROZEN = (2000, "账户已被冻结")
@@ -23,11 +21,3 @@ class UserStatus(Enum):
         获取错误码码信息
         """
         return self.value[1]
-
-
-# 创建异常类
-AccountFrozen = create_custom_exception(UserStatus.ACCOUNT_FROZEN)
-AccountExist = create_custom_exception(UserStatus.ACCOUNT_EXIST)
-AccountNotExist = create_custom_exception(UserStatus.ACCOUNT_NOT_EXIST)
-PassWordError = create_custom_exception(UserStatus.PASSWORD_ERROR)
-NotAuthenticated = create_custom_exception(UserStatus.NOT_AUTHENTICATED)
