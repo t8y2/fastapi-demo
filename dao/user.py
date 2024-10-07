@@ -2,7 +2,7 @@ import asyncio
 from typing import List
 
 from dao.base import BaseDao
-from database.mongo import user_collection, role_collection, route_collection
+from database.mongo import user_collection
 from schemas.user import DataBaseCreateUser
 
 

@@ -6,13 +6,7 @@ from fastapi import FastAPI
 from common.exception.handler import register_exception
 from starlette.middleware.cors import CORSMiddleware
 from starlette.middleware.gzip import GZipMiddleware
-from database.mongo import test_mongo, route_collection, role_collection, user_collection
-from database.redis import test_redis
 from middleware.access_middleware import AccessMiddleware
-from schemas.role import HttpCreateRole
-from schemas.user import HttpCreateUser
-from services.role import RoleService
-from services.user import UserService
 from utils.health_check import ensure_unique_route_names
 from controller.routers import v1
 from core.config import settings
@@ -22,8 +16,8 @@ from core.config import settings
 @asynccontextmanager
 async def register_init(app: FastAPI):
     # await test_mysql()
-    await test_redis()
-    await test_mongo()
+    # await test_redis()
+    # await test_mongo()
     yield
 
     # 关闭 redis
